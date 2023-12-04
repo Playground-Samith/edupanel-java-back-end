@@ -1,13 +1,16 @@
 package lk.ijse.dep11.edupanel.api;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
+
+@RestController
+@RequestMapping("/api/v1/lecturers")
+@CrossOrigin
 public class LecturerHttpController {
 
-    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(consumes = "multipart/form-data",produces = "application/json")
     public void createNewLecturer(){
         System.out.println("createNewLecturer()");
     }
